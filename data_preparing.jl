@@ -19,6 +19,7 @@ function split_dataset(ds, val)
 end
 
 function adjust_dataset(ds)
+    ds = ds[shuffle(1:end), :]
     dataset = ds[:,1:length(ds[1,:])-1]
     categories = ds[:,length(ds[1,:])]
     expected_values = zeros(length(ds[:,1]), 3)
